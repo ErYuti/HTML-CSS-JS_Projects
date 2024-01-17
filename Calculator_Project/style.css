@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.calBody{
+    color: aliceblue;
+    background-color: black;
+    border: 1px solid rgb(74, 208, 226);
+    border-radius: 5px;
+    width:200px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.calHead{
+    margin: 5px;
+    padding: 5px;
+    align-items: center;
+    padding-bottom:0;
+}
+#display{
+    width:92%;
+    padding:5px;
+    border: 2px solid rgb(120, 220, 233);
+    border-radius: 3px;
+}
+p{
+    font-size: 7px;
+    padding-top:2px;
+}
+.calButton{
+    width:79%;
+    margin:10px 15px;
+    display: flex;
+    justify-content: center;
+    gap:8px;
+    flex-wrap: wrap;
+    border: 1px solid rgba(197, 197, 197, 0.11);
+    border-radius: 2px;
+    padding: 5px;
+
+}
+.button-cal{
+    color: rgb(11, 93, 104);
+    width:25px;
+    height: 25px;
+    border: 1px solid rgb(117, 209, 221);
+    border-radius: 3px;
+    text-align: center;
+}
