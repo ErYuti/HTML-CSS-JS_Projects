@@ -1,0 +1,93 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+.sky{
+    height: 100vh;
+    width: 100%;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    position: relative;
+}
+.trees{
+    height: 100vh;
+    width: 100%;
+    background-image: url(trees.png);
+    background-size: cover; 
+    position: absolute;
+    top: -70px; 
+}
+.track{
+    height: 60vh;
+    width: 800vw;
+    background-image: url(track.png);
+    background-repeat: repeat-x; 
+    position: absolute;
+    top: 520px;
+    animation: TrainMove linear 30s infinite;
+}
+.train{
+    height: 200px;
+    width: 200px;
+    background-image: url(Train.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 444px;
+    bottom:40px;
+    animation: shake linear 1s infinite;
+
+}
+.wheel img{
+    width: 43px;
+    position: relative;
+    top:162px;
+    left:23px;
+    animation: wheelRotation linear 1s infinite;
+}
+.wheel1 img{
+    width: 43px;
+    position: relative;
+    top:111px;
+    left:69px;
+    animation: wheelRotation linear 1s infinite;
+}
+.wheel2 img{
+    width: 41px;
+    position: relative;
+    top:67px;
+    left:115px;
+    animation: wheelRotation linear 1s infinite;
+}
+
+@keyframes wheelRotation
+{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes TrainMove
+{
+    100%{
+        transform: translateX(-500vw);
+    }
+} 
+
+@keyframes shake
+{
+    0%{
+        transform: translateY(-5px);
+    }
+    50%{
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(-5px);
+    }
+}
+
