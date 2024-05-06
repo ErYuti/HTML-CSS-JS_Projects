@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Cde Generate and Download</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: darkgrey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        input{
+            margin: 10px;
+            padding: 10px 30px;
+            border-radius: 5px;
+        }
+        button{
+            padding: 10px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <img src="" alt="">
+    <input type="text" placeholder="Enter your name, url here">
+    <button class="gen">Generate QR Code</button>
+    <button class="dow">Download QR Code</button>
+    <script>
+        const input = document.querySelector("input");
+        const img = document.querySelector("img");
+        const generatorbtn = document.querySelector(".gen");
+        const downloadbtn = document.querySelector(".dow");
+
+        generatorbtn.addEventListener("click" ,()=>{
+            const qrCode= `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${input.value}`;
+            img.src = qrCode;
+        })
+        downloadbtn.addEventListener("click" ,async()=>{
+            const respone = await fetch (img.src);
+            const blob = await respone.blob();
+            const downloadlink = document.createElement("a");
+            downloadlink.href = URL.createObjectURL(blob);
+            downloadlink.download = `${input.value}_QRCode.jpg`
+            downloadlink.click()
+        })
+    </script>
+</body>
+</html>

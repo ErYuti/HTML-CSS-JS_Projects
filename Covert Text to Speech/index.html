@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covert Text to speech</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: darkgrey;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input {
+            margin: 10px;
+            padding: 10px 30px;
+            border-radius: 5px;
+        }
+
+        button {
+            cursor: pointer;
+            border-radius: 10px;
+            background-color: darkseagreen;
+            padding: 10px;
+            margin: 2px;
+        }
+
+        #output {
+            color: antiquewhite;
+            background-color:darkcyan;
+            border-radius: 10px;
+            padding: 5px 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="textInput" placeholder="Type text here...">
+    <button id="textButton">Click to Generate Text</button>
+    <div id="output"></div>
+    <button id="speckButton">Click to speak</button>
+
+    <script>
+        document.getElementById('textButton').addEventListener('click', function () {
+            var inputText = document.getElementById('textInput').value;
+            var outputDiv = document.getElementById('output');
+            var pTag = document.createElement('p');
+            pTag.innerHTML = inputText;
+            outputDiv.appendChild(pTag);
+
+            let text = inputText;
+            const btn = document.querySelector("#speckButton");
+            const speech = new SpeechSynthesisUtterance(text);
+            btn.onclick = () => {
+                speechSynthesis.speak(speech)
+            }
+        });
+
+    </script>
+</body>
+
+</html>

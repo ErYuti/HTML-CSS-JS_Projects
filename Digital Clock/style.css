@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: cornflowerblue;
+}
+.clock{
+    width: 70%;
+    margin: 10px auto;
+    padding: 20px;
+    margin-top: 250px;
+    background-color: antiquewhite;
+    text-align: center;
+    box-shadow: 10px 10px 10px black;
+    font-size: 3rem;
+    box-shadow: 10px 10px 20px black;
+}

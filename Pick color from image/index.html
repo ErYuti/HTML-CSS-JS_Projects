@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Picker from Image</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            background-color: cadetblue;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        img{
+            width: 50%;
+            height: auto;
+        }
+        span{
+            background-color: blanchedalmond;
+            padding: 20px;
+            border-radius: 5px;
+            font-size: 2rem;
+            box-shadow: 2px 2px 10px black;
+
+        }
+        button{
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: crimson;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://images.unsplash.com/photo-1502691876148-a84978e59af8?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+    <span></span>
+    <button>Click to Pick color value</button>
+    <script>
+        const btn = document.querySelector("button");
+        const span = document.querySelector("span");
+        btn.addEventListener("click", async ()=>{
+            const eyeDropper = new EyeDropper();
+            const { sRGBHex } = await eyeDropper.open();
+            console.log(sRGBHex);
+            span.innerHTML = sRGBHex;
+        })
+    </script>
+</body>
+</html>
